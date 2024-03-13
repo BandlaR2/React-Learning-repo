@@ -26,8 +26,8 @@ Custom components in React refer to user-defined, reusable building blocks creat
 ## Parent and Child Components:
 
 
-Parent Component:
+#### Parent Component:
 Manages and contains one or more child components, passing data and behavior to them through props.
 
-Child Component:
+#### Child Component:
 Receives and displays information from the parent, promoting a hierarchical structure in the application's UI.
