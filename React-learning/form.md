@@ -19,4 +19,5 @@ In React, an event listener is a function that is attached to a JSX element usin
 
 In this example, onClick is the event listener that listens for a click event on the button element. When clicked, it calls the handleClick function.
 
-
+### State 
+State in React refers to the internal data held by a component, which can change over time in response to user actions or other events, triggering re-rendering of the component.
