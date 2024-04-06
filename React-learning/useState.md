@@ -82,5 +82,8 @@ where each property can have its own nested properties or values.
     setUserData(prevUserData => ({
       ...prevUserData,
       email: newEmail
-    }));
+    }));2
   };
+
+  ### passing state as object
+  Passing state as an object in React allows you to manage multiple state values within a single state object.
