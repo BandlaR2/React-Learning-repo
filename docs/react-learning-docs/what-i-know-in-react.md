@@ -11,7 +11,7 @@
 
  1.6 Parent and Child Components
 
- ### 2.[Props.md](react-learning-docs/Props.md)
+ ### 2.[Props.md](Props.md)
 
 2.1 Receiving a prop in a component
 
@@ -25,7 +25,7 @@
 
 2.6 spread objects as props
 
-### 3.[forms.md](react-learning-docs/form.md)
+### 3.[forms.md](form.md)
 
 3.1 Header
 
@@ -41,7 +41,7 @@
 
 3.7 Submit Button
 
-### 4.[useState.md](react-learning-docs/useState.md)
+### 4.[useState.md](useState.md)
 
 4.1 useSate array destructuring
 
@@ -57,7 +57,7 @@
 
 4.6 passing state as object
 
-### 5.[useEffect.md](react-learning-docs/useEffect.md)
+### 5.[useEffect.md](useEffect.md)
 5.1 useEffect
 
 5.2 Fetch Data
