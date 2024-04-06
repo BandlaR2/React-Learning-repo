@@ -1,10 +1,10 @@
 # React learning
 ## Introduction
 ## Libraries/Framework
-#### Libraries:
+#### Libraries
 
 Collections of pre-written, reusable code modules that simplify and enhance software development.
-#### Frameworks:
+#### Frameworks
 
 Comprehensive, pre-established software structures that provide a foundation for building applications, enforcing a specific design and coding paradigm.
 
@@ -23,7 +23,7 @@ JSX is a syntax extension for JavaScript used in React. It allows developers to 
 Custom components in React refer to user-defined, reusable building blocks created to encapsulate specific functionality or UI elements. 
 ##### React  Component:A function that returns React elements.
 
-## Parent and Child Components:
+## Parent and Child Components
 
 
 #### Parent Component:

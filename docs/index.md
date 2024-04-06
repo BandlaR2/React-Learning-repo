@@ -1,7 +1,7 @@
 # Learning Resource Website
 ## React
-### [what i know in react](react-learning-docs/what-i-know-in-react.md)
+### [what i know in react : Components,Props,forms, useState,useEffect](react-learning-docs/what-i-know-in-react.md)
 
-### [react-resources.md](react-learning-docs/react-resources.md)
+### [react-resources](react-learning-docs/react-resources.md)
 
 [React-Learning-repo](https://github.com/BandlaR2/React-Learning-repo)
