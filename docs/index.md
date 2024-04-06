@@ -1,5 +1,4 @@
 # Learning Resource Website
- ## React
+## React
 
 [what-i-know-in-react.md](what-i-know-in-react.md)
-  
