@@ -1,6 +1,6 @@
 # Learning Resource Website
 ## React
-### [what i know in react : Components,Props,forms, useState,useEffect](react-learning-docs/what-i-know-in-react.md)
+### [what i know in react : Components,Props,forms, useState,useEffect.](react-learning-docs/what-i-know-in-react.md)
 
 ### [react-resources](react-learning-docs/react-resources.md)
 
