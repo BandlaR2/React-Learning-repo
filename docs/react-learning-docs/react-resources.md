@@ -11,7 +11,7 @@ In these link we have topics that are related to components,Libraries/Framework,
 
 #### 3. [Class Central: Props and Mapping](https://scrimba.com/playlist/pqQgrcN)
 
-In these link we have topics that are related to props,react renders arrays,mapping.
+In these link we have topics that are related to props,react renders arrays,Mapping.
 
 #### 4. [Class Central: usestate and useEffect ](https://scrimba.com/playlist/prXJpCQ)
 
