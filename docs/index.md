@@ -9,5 +9,5 @@ In these link we have topics that are related to Components,Props,forms, useStat
 
 
 ## SQL
-### [what i know in sql](what-i-know-in-sql.md)
+### [what i know in sql](sql-learning-docs/what-i-know-in-sql.md)
 In these link we have topics that are related to Basics,Group By,Joins,Updates,Inserts,Stored Procedures.
