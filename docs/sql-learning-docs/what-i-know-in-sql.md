@@ -1,1 +1,1 @@
-### [Sql learning ](SQL-Learning-repo/basic)
+### [Sql learning ](sql-learning-docs/basic)
