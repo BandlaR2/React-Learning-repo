@@ -5,3 +5,6 @@
 ### [React-resources](react-learning-docs/react-resources.md)
 
 [React-Learning-repo](https://github.com/BandlaR2/React-Learning-repo)
+
+## SQL
+### [what i know in sql :]

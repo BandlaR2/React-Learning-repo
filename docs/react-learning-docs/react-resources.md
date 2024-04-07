@@ -13,7 +13,7 @@ In these link we have topics that are related to components,Libraries/Framework,
 
 In these link we have topics that are related to Props,React renders arrays,Mapping.
 
-#### 4. [Class Central: usestate and useEffect ](https://scrimba.com/playlist/prXJpCQ)
+#### 4. [Class Central: useState and useEffect ](https://scrimba.com/playlist/prXJpCQ)
 
 
 In these link we have topics that are related to Event Listeners,useState,Conditional Rendering,forms,useEffect ,Fetching Data , useEffect cleanup function.

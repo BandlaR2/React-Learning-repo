@@ -11,7 +11,7 @@
 
  1.6 Parent and Child Components
 
- ### 2.[Props](Props.md)
+### 2. [Props](Props.md)
 
 2.1 Receiving a prop in a component
 
