@@ -45,7 +45,7 @@ In these link we have the topics that are releated to :
 
 4.2 Inserts
 
-### 5.[Sql Learning : Stored Procedures](stored-procedures)
+### 5.[Sql Learning : Stored Procedures](stored_procedures)
 In these link we have the topics that are releated to :
 
 5.1 joins
