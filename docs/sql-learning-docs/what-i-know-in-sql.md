@@ -1,1 +1,1 @@
-### [Sql learning ](sql-learning-docs/basic)
+### [Sql learning ](basic)
