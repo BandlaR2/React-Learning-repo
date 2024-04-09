@@ -18,17 +18,17 @@ In these link we have topics that are related to Basics,Group By,Joins,Updates,I
 In the "SQL Resources" section, you'll find helpful links to guide you through various aspects of SQL.
 
 ## Netlify
-### 1. [How to create Netlify application](netlify.md)
+### 1. [How to create Netlify application](netlify-docs/netlify.md)
 You can create a Netlify application by following the instructions provided in [How to create Netlify application](netlify.md).
 
-## 2. [Netlify Resources](netlify-resources)
+## 2. [Netlify Resources](netlify-docs/netlify-resources)
 
 
 In these "Netlify Resources" section, you'll find helpful links to guide you through creating a Netlify application.
 
 ## PostgreSQL Installation
 
-### 1.[How to install PostgreSQL](pagila.md)
+### 1.[How to install PostgreSQL](postgres-installation-docs/pagila.md)
 You can install PostgreSQL on your system by following the instructions provided in the [How to install PostgreSQL](pagila.md) guide.
 
 ### 2.[PostgreSQL Installation Resources](postgres-installation-docs/Postgres-resources.md)
