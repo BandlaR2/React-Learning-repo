@@ -21,7 +21,7 @@ In the "SQL Resources" section, you'll find helpful links to guide you through v
 ### 1. [How to create Netlify application](netlify-docs/netlify.md)
 You can create a Netlify application by following the instructions provided in [How to create Netlify application](netlify.md).
 
-## 2. [Netlify Resources](netlify-docs/netlify-resources)
+### 2. [Netlify Resources](netlify-docs/netlify-resources.md)
 
 
 In these "Netlify Resources" section, you'll find helpful links to guide you through creating a Netlify application.
