@@ -1,7 +1,7 @@
 # Learning Resource Website
 ## React
 ### 1. [What i know in react ](react-learning-docs/what-i-know-in-react.md)
-In these link we have topics that are related to Components,Props,forms, useState,useEffect
+In these link we have topics that are related to Components,Props,forms,React Hooks.
 
 ### 2. [React Resources](react-learning-docs/react-resources.md)
 In the "React Resources" section, you'll find helpful links to guide you through various aspects of React.
