@@ -33,7 +33,17 @@ You can install PostgreSQL on your system by following the instructions provided
 
 ### 2.[PostgreSQL Installation Resources](postgres-installation-docs/Postgres-resources.md)
 
-In the "PostgreSQL Installation Resources" section, you'll find helpful links to guide you through the process of installing PostgreSQL
+In the "PostgreSQL Installation Resources" section, you'll find helpful links to guide you through the process of installing PostgreSQL.
+
+## Supabase Installation
+
+### 1.[How to install Supabase](supabase-learning-docs/supabase.md)
+You can install PostgreSQL on your system by following the instructions provided in the [How to install Supabase](supabase-learning-docs/supabase.md) guide.
+
+### 2.[Supabase Installation Resources](supabase-learning-docs/supabase-resources.md)
+
+
+In the "PostgreSQL Installation Resources" section, you'll find helpful links to guide you through the process of installing Supabase.
 
 
 
