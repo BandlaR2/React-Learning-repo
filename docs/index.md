@@ -1,15 +1,4 @@
-<style>
-body {
-    
-        background-image: url('/Users/ruchithabandla/code/React-Learning-repo/docs/OIP (1).jpeg');
-    background-size: cover; 
-  
-    color :black;
-    /* Adjust as needed */
-    /* Additional background properties can be added here */
-}
 
-</style>
 # Learning Resource Website
 ## React
 ### 1. [What i know in react ](react-learning-docs/what-i-know-in-react.md)
