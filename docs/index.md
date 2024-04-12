@@ -3,7 +3,7 @@ body {
     
         background-image: url('/Users/ruchithabandla/code/React-Learning-repo/docs/OIP (1).jpeg');
     background-size: cover; 
-    background-color:white;
+  
     color :black;
     /* Adjust as needed */
     /* Additional background properties can be added here */
