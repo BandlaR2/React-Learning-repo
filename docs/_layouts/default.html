@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Learning Resource Website</title>
+    <title>{{ page.title }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,25 +69,55 @@
 <body>
 
 <header>
-    <h1>Learning Resource Website</h1>
+    <h1>{{ page.title }}</h1>
     <nav>
         <ul>
-            <li><a href="react-learning-docs/what-i-know-in-react.html">React</a></li>
-            <li><a href="sql-learning-docs/what-i-know-in-sql.html">SQL</a></li>
-            <li><a href="postgres-installation-docs/pagila.html">PostgreSQL</a></li>
-            <li><a href="supabase-learning-docs/supabase.html">Supabase</a></li>
+            <li><a href="#react">React</a></li>
+            <li><a href="#sql">SQL</a></li>
+            <li><a href="#postgres">PostgreSQL</a></li>
+            <li><a href="#supabase">Supabase</a></li>
         </ul>
     </nav>
 </header>
 
 <main class="container">
-    <!-- Content will be loaded here -->
+    <section id="react">
+        <h2>React</h2>
+        <ul>
+            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React Learning Repository</a></li>
+        </ul>
+    </section>
+
+    <section id="sql">
+        <h2>SQL</h2>
+        <ul>
+            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
+            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
+        </ul>
+    </section>
+
+    <section id="postgres">
+        <h2>PostgreSQL Installation</h2>
+        <ul>
+            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
+            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
+        </ul>
+    </section>
+
+    <section id="supabase">
+        <h2>Supabase Installation</h2>
+        <ul>
+            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
+            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
+        </ul>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 Learning Resource Website</p>
+    <p>&copy; {{ site.time | date: '%Y' }} Learning Resource Website</p>
 </footer>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a');
@@ -108,6 +138,8 @@
         });
     });
 </script>
+
+
 
 </body>
 </html>
