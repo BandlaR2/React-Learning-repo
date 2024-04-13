@@ -54,18 +54,19 @@
     </style>
 </head>
 <body>
+
 <header>
     <h1>{{ page.title }}</h1>
     <nav>
         <ul style="display: flex; list-style-type: none; padding: 0;">
-            <li style="margin-right: 20px;"><a href="sql-learning-docs/what-i-know-in-sql.md">SQL</a></li>
+            <li style="margin-right: 20px;"><a href="sql-learning-docs/">SQL</a></li>
             <li style="margin-right: 20px;"><a href="react-learning-docs/what-i-know-in-react.md">React</a></li>
+            <li style="margin-right: 20px;"><a href="react-learning-docs/react-resources.md">React Resources</a></li>
             <li style="margin-right: 20px;"><a href="postgres-installation-docs/pagila.md">PostgreSQL</a></li>
             <li><a href="supabase-learning-docs/supabase.md">Supabase</a></li>
         </ul>
     </nav>
 </header>
-
 
 <main class="container">
     <div id="content">
@@ -77,7 +78,6 @@
     <p>&copy; {{ site.time | date: '%Y' }} Learning Resource Website</p>
 </footer>
 
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a');
@@ -85,12 +85,28 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const url = this.getAttribute('href');
-                fetch(url)
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('content').innerHTML = html;
-                    })
-                    .catch(error => console.error('Error fetching content:', error));
+                if (url.includes('what-i-know-in-react.md')) {
+                    fetch('react-learning-docs/what-i-know-in-react.md')
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        })
+                        .catch(error => console.error('Error fetching content:', error));
+                } else if (url.includes('react-resources.md')) {
+                    fetch('react-learning-docs/react-resources.md')
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        })
+                        .catch(error => console.error('Error fetching content:', error));
+                } else {
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        })
+                        .catch(error => console.error('Error fetching content:', error));
+                }
             });
         });
     });
@@ -98,3 +114,4 @@
 
 </body>
 </html>
+
