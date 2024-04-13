@@ -60,8 +60,8 @@
     <nav>
         <ul style="display: flex; list-style-type: none; padding: 0;">
             <li style="margin-right: 20px;"><a href="sql-learning-docs/">SQL</a></li>
-            <li style="margin-right: 20px;"><a href="react-learning-docs/what-i-know-in-react.md">React</a></li>
-            <li style="margin-right: 20px;"><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+            <li style="margin-right: 20px;"><a href="react-learning-docs/what-i-know-in-react.html">React - What I Know</a></li>
+            <li style="margin-right: 20px;"><a href="react-learning-docs/react-resources.html">React Resources</a></li>
             <li style="margin-right: 20px;"><a href="postgres-installation-docs/pagila.md">PostgreSQL</a></li>
             <li><a href="supabase-learning-docs/supabase.md">Supabase</a></li>
         </ul>
@@ -85,11 +85,6 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const url = this.getAttribute('href');
-                if (url.includes('what-i-know-in-react.md')) {
-                    document.querySelector('header').style.display = 'none';
-                } else {
-                    document.querySelector('header').style.display = 'block';
-                }
                 fetch(url)
                     .then(response => response.text())
                     .then(html => {
