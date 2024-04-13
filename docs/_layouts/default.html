@@ -15,6 +15,19 @@
             padding: 20px;
             text-align: center;
         }
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul li {
+            margin-right: 20px;
+        }
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
         main {
             padding: 20px;
         }
@@ -58,20 +71,48 @@
 <header>
     <h1>{{ page.title }}</h1>
     <nav>
-        <ul style="display: flex; list-style-type: none; padding: 0;">
-            <li style="margin-right: 20px;"><a href="sql-learning-docs/">SQL</a></li>
-            <li style="margin-right: 20px;"><a href="react-learning-docs/what-i-know-in-react.md">React</a></li>
-            <li style="margin-right: 20px;"><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-            <li style="margin-right: 20px;"><a href="postgres-installation-docs/pagila.md">PostgreSQL</a></li>
-            <li><a href="supabase-learning-docs/supabase.md">Supabase</a></li>
+        <ul>
+            <li><a href="#react">React</a></li>
+            <li><a href="#sql">SQL</a></li>
+            <li><a href="#postgres">PostgreSQL</a></li>
+            <li><a href="#supabase">Supabase</a></li>
         </ul>
     </nav>
 </header>
 
 <main class="container">
-    <div id="content">
-        {{ content }}
-    </div>
+    <section id="react">
+        <h2>React</h2>
+        <ul>
+            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React Learning Repository</a></li>
+        </ul>
+    </section>
+
+    <section id="sql">
+        <h2>SQL</h2>
+        <ul>
+            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
+            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
+        </ul>
+    </section>
+
+    <section id="postgres">
+        <h2>PostgreSQL Installation</h2>
+        <ul>
+            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
+            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
+        </ul>
+    </section>
+
+    <section id="supabase">
+        <h2>Supabase Installation</h2>
+        <ul>
+            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
+            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
+        </ul>
+    </section>
 </main>
 
 <footer>
@@ -85,28 +126,12 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const url = this.getAttribute('href');
-                if (url.includes('what-i-know-in-react.md')) {
-                    fetch('react-learning-docs/what-i-know-in-react.md')
-                        .then(response => response.text())
-                        .then(html => {
-                            document.getElementById('content').innerHTML = html;
-                        })
-                        .catch(error => console.error('Error fetching content:', error));
-                } else if (url.includes('react-resources.md')) {
-                    fetch('react-learning-docs/react-resources.md')
-                        .then(response => response.text())
-                        .then(html => {
-                            document.getElementById('content').innerHTML = html;
-                        })
-                        .catch(error => console.error('Error fetching content:', error));
-                } else {
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(html => {
-                            document.getElementById('content').innerHTML = html;
-                        })
-                        .catch(error => console.error('Error fetching content:', error));
-                }
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('content').innerHTML = html;
+                    })
+                    .catch(error => console.error('Error fetching content:', error));
             });
         });
     });
@@ -114,4 +139,3 @@
 
 </body>
 </html>
-
