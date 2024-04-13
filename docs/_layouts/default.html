@@ -74,6 +74,7 @@
         <ul>
             <li><a href="#react">React</a></li>
             <li><a href="#sql">SQL</a></li>
+            <li><a href="#netlify">Netlify</a></li>
             <li><a href="#postgres">PostgreSQL</a></li>
             <li><a href="#supabase">Supabase</a></li>
         </ul>
@@ -105,7 +106,15 @@
     });
 
     function fetchContent(url) {
-        fetch(url)
+        const contentURLs = {
+            '#react': 'react-learning-docs/what-i-know-in-react.md',
+            '#sql': 'sql-learning-docs/what-i-know-in-sql.md',
+            '#netlify': 'netlify-docs/netlify.md',
+            '#postgres': 'postgres-installation-docs/pagila.md',
+            '#supabase': 'supabase-learning-docs/supabase.md'
+        };
+
+        fetch(contentURLs[url])
             .then(response => response.text())
             .then(html => {
                 const parser = new DOMParser();
@@ -119,4 +128,3 @@
 
 </body>
 </html>
-
