@@ -100,31 +100,25 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const url = this.getAttribute('href');
-                fetchContent(url);
+                if (url.startsWith('#')) {
+                    const sectionId = url.substring(1);
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            document.querySelector('main').innerHTML = html;
+                        })
+                        .catch(error => console.error('Error fetching content:', error));
+                }
             });
         });
     });
-
-    function fetchContent(url) {
-        const contentURLs = {
-            '#react': 'react-learning-docs/what-i-know-in-react.md',
-            '#sql': 'sql-learning-docs/what-i-know-in-sql.md',
-            '#netlify': 'netlify-docs/netlify.md',
-            '#postgres': 'postgres-installation-docs/pagila.md',
-            '#supabase': 'supabase-learning-docs/supabase.md'
-        };
-
-        fetch(contentURLs[url])
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const mainContent = doc.querySelector('main').innerHTML;
-                document.getElementById('main-content').innerHTML = mainContent;
-            })
-            .catch(error => console.error('Error fetching content:', error));
-    }
 </script>
+
 
 </body>
 </html>
