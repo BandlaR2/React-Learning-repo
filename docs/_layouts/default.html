@@ -231,24 +231,23 @@ nav.menu ul li a:hover {
     });
     </script>
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
+ // JavaScript for Dropdown Menu
+document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
-    
+
     dropdowns.forEach(dropdown => {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
         dropdown.addEventListener('mouseenter', function() {
-            this.querySelector('.dropdown-menu').style.display = 'block';
+            dropdownMenu.style.display = 'block';
         });
-        
+
         dropdown.addEventListener('mouseleave', function() {
-            this.querySelector('.dropdown-menu').style.display = 'none';
+            dropdownMenu.style.display = 'none';
         });
 
-        dropdown.querySelector('.dropdown-menu').addEventListener('mouseenter', function() {
-            this.style.display = 'block';
-        });
-
-        dropdown.querySelector('.dropdown-menu').addEventListener('mouseleave', function() {
-            this.style.display = 'none';
+        dropdownMenu.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent click event from bubbling up
         });
     });
 });
