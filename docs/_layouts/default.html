@@ -231,28 +231,28 @@ nav.menu ul li a:hover {
     });
     </script>
 <script>
- // JavaScript for Dropdown Menu
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown');
+    // JavaScript for Dropdown Menu
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdowns = document.querySelectorAll('.dropdown');
 
-    dropdowns.forEach(dropdown => {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
 
-        dropdown.addEventListener('mouseenter', function() {
-            dropdownMenu.style.display = 'block';
-        });
+            dropdownToggle.addEventListener('click', function() {
+                dropdownMenu.classList.toggle('show');
+            });
 
-        dropdown.addEventListener('mouseleave', function() {
-            dropdownMenu.style.display = 'none';
-        });
-
-        dropdownMenu.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent click event from bubbling up
+            // Close the dropdown menu when clicking outside of it
+            document.addEventListener('click', function(event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
         });
     });
-});
-
 </script>
+
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
