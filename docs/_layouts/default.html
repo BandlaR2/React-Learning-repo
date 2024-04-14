@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,25 +34,15 @@
         }
         main {
             padding: 20px;
-            display: flex;
         }
-        nav.menu {
-            flex: 1;
-            margin-right: 20px;
-        }
-        nav.menu ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav.menu ul li {
-            margin-bottom: 10px;
-        }
-        nav.menu ul li a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        nav.menu ul li a:hover {
-            text-decoration: underline;
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
         .container {
             max-width: 800px;
@@ -60,7 +51,7 @@
         .section {
             margin-bottom: 20px;
         }
-        h2 {
+        h1, h2 {
             margin-top: 0;
         }
         ul {
@@ -77,6 +68,12 @@
         a:hover {
             text-decoration: underline;
         }
+        nav.menu {
+         flex: 1;
+        margin-right: 20px;
+       text-align: left; /* Align the menu items to the left */
+}
+
     </style>
 </head>
 <body>
@@ -94,33 +91,52 @@
 </header>
 
 <main class="container">
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Menu Item 1</a></li>
-            <li><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
-            <li><a href="#">Menu Item 4</a></li>
-        </ul>
-    </nav>
     <section id="content">
         <h2>React</h2>
         <ul>
-            <!-- React content -->
+            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
         </ul>
 
         <h2>SQL</h2>
         <ul>
-            <!-- SQL content -->
+            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
+            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
         </ul>
 
-        <!-- Other sections -->
+        <h2>Netlify</h2>
+        <ul>
+            <li><a href="netlify-docs/netlify.md">How to create Netlify application</a></li>
+            <li><a href="netlify-docs/netlify-resources.md">Netlify Resources</a></li>
+        </ul>
+
+        <h2>PostgreSQL Installation</h2>
+        <ul>
+            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
+            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
+        </ul>
+
+        <h2>Supabase Installation</h2>
+        <ul>
+            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
+            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
+        </ul>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Menu Item 1</a></li>
+                <li><a href="#">Menu Item 2</a></li>
+                <li><a href="#">Menu Item 3</a></li>
+                <li><a href="#">Menu Item 4</a></li>
+            </ul>
+        </nav>
+     
     </section>
 </main>
 
 <footer>
     <p>&copy; 2024 Learning Resource Website</p>
 </footer>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a');
