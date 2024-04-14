@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex; /* Use flexbox to align items */
         }
         header {
             background-color: #333;
@@ -23,127 +23,57 @@
             padding: 0;
             margin: 0;
             list-style: none;
-            display: flex;
-            justify-content: center;
         }
         header nav ul li {
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
-        header nav ul li:last-child {
-            margin-right: 0;
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
         }
         main {
             padding: 20px;
+            flex: 1; /* Allow main content to take remaining space */
         }
         footer {
             background-color: #333;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
             width: 100%;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
-        .section {
-            margin-bottom: 20px;
+        .dropdown {
+            position: fixed;
+            left: 20px; /* Adjust the left position */
+            top: 50%; /* Position the dropdown vertically at 50% from the top */
+            transform: translateY(-50%); /* Center the dropdown vertically */
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
         }
-        h1, h2 {
-            margin-top: 0;
-        }
-        ul {
-            list-style: none;
+        .dropdown ul {
             padding: 0;
+            margin: 0;
+            list-style: none;
         }
-        li {
-            margin-bottom: 10px;
+        .dropdown ul li {
+            margin-bottom: 5px;
         }
-        a {
-            color: #007bff;
+        .dropdown ul li a {
+            color: #333;
             text-decoration: none;
         }
-        a:hover {
+        .dropdown ul li a:hover {
             text-decoration: underline;
         }
-        nav.menu {
-    position: fixed;
-    left: 20px; /* Adjust the left position as needed */
-    top: 50%; /* Position the menu vertically at 50% from the top */
-    transform: translateY(-50%); /* Center the menu vertically */
-}
-
-nav.menu ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-nav.menu ul li {
-    margin-bottom: 10px;
-}
-
-nav.menu ul li a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-nav.menu ul li a:hover {
-    text-decoration: underline;
-}
-.menu .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    pointer-events: auto; 
-}
-
-.menu .dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.menu .dropdown-menu li {
-    padding: 10px;
-}
-
-.menu .dropdown-menu li a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-}
-
-.menu .dropdown-menu li a:hover {
-    background-color: #f0f0f0;
-}
-.dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Style the dropdown content (hidden by default) */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    /* Style the dropdown links */
-    .dropdown-menu a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-
-
     </style>
 </head>
 <body>
@@ -162,118 +92,45 @@ nav.menu ul li a:hover {
 
 <main class="container">
     <section id="content">
-       
-        <h2>React</h2>
-        <ul>
-            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
-            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
-        </ul>
-
-        <h2>SQL</h2>
-        <ul>
-            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
-            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
-        </ul>
-
-        <h2>Netlify</h2>
-        <ul>
-            <li><a href="netlify-docs/netlify.md">How to create Netlify application</a></li>
-            <li><a href="netlify-docs/netlify-resources.md">Netlify Resources</a></li>
-        </ul>
-
-        <h2>PostgreSQL Installation</h2>
-        <ul>
-            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
-            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
-        </ul>
-
-        <h2>Supabase Installation</h2>
-        <ul>
-            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
-            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
-        </ul>
-        <nav class="menu">
-            <ul>
-              <li class="dropdown">
-                <h2>Learning Sites</h2>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <h2>React</h2>
-                    <ul class="dropdown-menu">
-                      <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
-                      <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-                      <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <h4>SQL</h4>
-                    <ul class="dropdown-menu">
-                      <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
-                      <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <h4>PostgreSQL</h4>
-                    <ul class="dropdown-menu">
-                      <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
-                      <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <h4>Supabase</h4>
-                    <ul class="dropdown-menu">
-                      <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
-                      <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-     
+        <h2>Content Area</h2>
+        <!-- Content will be loaded here -->
     </section>
 </main>
+
+<div class="dropdown">
+    <h2>Learning Sites</h2>
+    <ul>
+        <li><a href="react-learning-docs/what-i-know-in-react.md">React</a></li>
+        <li><a href="sql-learning-docs/what-i-know-in-sql.md">SQL</a></li>
+        <li><a href="postgres-installation-docs/pagila.md">PostgreSQL</a></li>
+        <li><a href="supabase-learning-docs/supabase.md">Supabase</a></li>
+    </ul>
+</div>
 
 <footer>
     <p>&copy; 2024 Learning Resource Website</p>
 </footer>
+
 <script>
-    // JavaScript for Dropdown Menu
     document.addEventListener('DOMContentLoaded', function() {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      
-      dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', function() {
-          this.querySelector('.dropdown-menu').style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-          this.querySelector('.dropdown-menu').style.display = 'none';
-        });
-      });
-    });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const url = this.getAttribute('href');
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(markdown => {
-                            // Convert Markdown to HTML
-                            const converter = new showdown.Converter();
-                            const html = converter.makeHtml(markdown);
-                            document.getElementById('content').innerHTML = html;
-                        })
-                        .catch(error => console.error('Error fetching content:', error));
-                });
+        const links = document.querySelectorAll('.dropdown a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                fetch(url)
+                    .then(response => response.text())
+                    .then(markdown => {
+                        // Convert Markdown to HTML
+                        const converter = new showdown.Converter();
+                        const html = converter.makeHtml(markdown);
+                        document.getElementById('content').innerHTML = html;
+                    })
+                    .catch(error => console.error('Error fetching content:', error));
             });
         });
-    </script>
+    });
+</script>
 
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
