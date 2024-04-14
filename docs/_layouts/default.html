@@ -68,6 +68,32 @@
             text-decoration: underline;
         }
         /* Dropdown container style */
+        nav.menu {
+    position: fixed;
+    left: 20px; /* Adjust the left position as needed */
+    top: 50%; /* Position the menu vertically at 50% from the top */
+    transform: translateY(-50%); /* Center the menu vertically */
+}
+
+nav.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav.menu ul li {
+    margin-bottom: 10px;
+}
+
+nav.menu ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+nav.menu ul li a:hover {
+    text-decoration: underline;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -150,15 +176,21 @@
             <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
             <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
         </ul>
-        <h2>React</h2>
-        <div class="dropdown">
-            <button class="dropdown-btn">React Resources</button>
-            <ul class="dropdown-content">
-                <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
-                <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-                <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
+        <nav class="menu">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">React</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+                        <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+                        <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">PostgreSQL</a></li>
+                <li><a href="#">Supabase</a></li>
             </ul>
-        </div>
+        </nav>
         
      
     </section>
