@@ -101,7 +101,12 @@ nav.menu ul li a:hover {
     border: none;
     cursor: pointer;
 }
-
+.dropdown {
+    position: fixed;
+    left: 20px; /* Adjust the left position as needed */
+    top: 50%; /* Position the menu vertically at 50% from the top */
+    transform: translateY(-50%); /* Center the menu vertically */
+}
 .dropdown a {
     display: block;
     color: black;
@@ -146,6 +151,7 @@ nav.menu ul li a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    left: 100%; /* Position the content to the right of the button */
 }
 
 .dropdown:hover .dropdown-btn {
