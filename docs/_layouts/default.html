@@ -69,10 +69,31 @@
             text-decoration: underline;
         }
         nav.menu {
-         flex: 1;
-        margin-right: 20px;
-       text-align: left; /* Align the menu items to the left */
+    position: fixed;
+    left: 20px; /* Adjust the left position as needed */
+    top: 50%; /* Position the menu vertically at 50% from the top */
+    transform: translateY(-50%); /* Center the menu vertically */
 }
+
+nav.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav.menu ul li {
+    margin-bottom: 10px;
+}
+
+nav.menu ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+nav.menu ul li a:hover {
+    text-decoration: underline;
+}
+
 
     </style>
 </head>
