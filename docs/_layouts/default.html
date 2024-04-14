@@ -68,7 +68,31 @@
         a:hover {
             text-decoration: underline;
         }
-    
+        nav.menu {
+    position: fixed;
+    left: 20px; /* Adjust the left position as needed */
+    top: 50%; /* Position the menu vertically at 50% from the top */
+    transform: translateY(-50%); /* Center the menu vertically */
+}
+
+nav.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav.menu ul li {
+    margin-bottom: 10px;
+}
+
+nav.menu ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+nav.menu ul li a:hover {
+    text-decoration: underline;
+}
 .menu .dropdown-menu {
     display: none;
     position: absolute;
@@ -206,24 +230,28 @@
     });
     </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const url = this.getAttribute('href');
-                fetch(url)
-                    .then(response => response.text())
-                    .then(markdown => {
-                        // Convert Markdown to HTML
-                        const converter = new showdown.Converter();
-                        const html = converter.makeHtml(markdown);
-                        document.getElementById('content').innerHTML = html;
-                    })
-                    .catch(error => console.error('Error fetching content:', error));
-            });
+   document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function() {
+            this.querySelector('.dropdown-menu').style.display = 'block';
+        });
+        
+        dropdown.addEventListener('mouseleave', function() {
+            this.querySelector('.dropdown-menu').style.display = 'none';
+        });
+
+        dropdown.querySelector('.dropdown-menu').addEventListener('mouseenter', function() {
+            this.style.display = 'block';
+        });
+
+        dropdown.querySelector('.dropdown-menu').addEventListener('mouseleave', function() {
+            this.style.display = 'none';
         });
     });
+});
+
 </script>
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
