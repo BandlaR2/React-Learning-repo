@@ -109,19 +109,35 @@
             <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
         </ul>
 
-        <h2>Learning Websites</h2>
-        <ul>
-            <li><a href="#">Codevolution React Tutorials - Topics</a></li>
-            <li><a href="#">Class Central: Build a React site</a></li>
-            <li><a href="#">Class Central: Props and Mapping</a></li>
-            <li><a href="#">Class Central: useState and useEffect</a></li>
-        </ul>
+     
     </section>
 </main>
 
 <footer>
     <p>&copy; 2024 Learning Resource Website</p>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                fetch(url)
+                    .then(response => response.text())
+                    .then(markdown => {
+                        // Convert Markdown to HTML
+                        const converter = new showdown.Converter();
+                        const html = converter.makeHtml(markdown);
+                        document.getElementById('content').innerHTML = html;
+                    })
+                    .catch(error => console.error('Error fetching content:', error));
+            });
+        });
+    });
+</script>
+<!-- Include the Showdown library for Markdown-to-HTML conversion -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
 </body>
 </html>
