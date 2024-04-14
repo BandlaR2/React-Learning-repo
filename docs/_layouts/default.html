@@ -93,6 +93,32 @@ nav.menu ul li a {
 nav.menu ul li a:hover {
     text-decoration: underline;
 }
+.menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu .dropdown-menu li {
+    padding: 10px;
+}
+
+.menu .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.menu .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
 
 
     </style>
@@ -145,33 +171,38 @@ nav.menu ul li a:hover {
         </ul>
         <nav class="menu">
             <ul>
-                <li><a href="#">React</a>
-                    <ul>
+                <li class="dropdown">
+                    <a href="#">React</a>
+                    <ul class="dropdown-menu">
                         <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
                         <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
                         <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
                     </ul>
                 </li>
-                <li><a href="#">SQL</a>
-                    <ul>
+                <li class="dropdown">
+                    <a href="#">SQL</a>
+                    <ul class="dropdown-menu">
                         <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
                         <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
                     </ul>
                 </li>
-                <li><a href="#">PostgreSQL</a>
-                    <ul>
+                <li class="dropdown">
+                    <a href="#">PostgreSQL</a>
+                    <ul class="dropdown-menu">
                         <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
                         <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Supabase</a>
-                    <ul>
+                <li class="dropdown">
+                    <a href="#">Supabase</a>
+                    <ul class="dropdown-menu">
                         <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
                         <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
+        
      
     </section>
 </main>
