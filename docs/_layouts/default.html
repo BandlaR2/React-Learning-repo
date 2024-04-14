@@ -33,6 +33,7 @@
         }
         main {
             padding: 20px;
+            position: relative; /* Add relative positioning to the main element */
         }
         footer {
             background-color: #333;
@@ -94,11 +95,11 @@
             text-decoration: underline;
         }
         .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-right: 20px; /* Adjust the margin as needed */
+            position: absolute;
+            left: 0; /* Adjust the left position */
+            top: 0; /* Adjust the top position */
+            margin-left: -20px; /* Adjust the negative margin to align with the main content */
         }
-
 
         .dropdown button {
             background-color: hsl(0, 0%, 80%);
@@ -114,7 +115,6 @@
             position: absolute;
             background-color: hsl(0, 0%, 95%);
             display: none;
-            right: 0%; /* Adjust the position to the left side */
         }
 
         .dropdown:hover .dropdown-content {
@@ -209,3 +209,4 @@
 
 </body>
 </html>
+
