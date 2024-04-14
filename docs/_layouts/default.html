@@ -67,6 +67,41 @@
         a:hover {
             text-decoration: underline;
         }
+        /* Dropdown container style */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -160px; /* Adjust this value to position the dropdown on the left side */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the list items */
+.dropdown-content li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+/* Change the background color of list items on hover */
+.dropdown-content li:hover {
+    background-color: #f0f0f0;
+}
+
     </style>
 </head>
 <body>
@@ -115,7 +150,16 @@
             <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
             <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
         </ul>
-
+        <h2>React</h2>
+        <div class="dropdown">
+            <button class="dropdown-btn">React Resources</button>
+            <ul class="dropdown-content">
+                <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+                <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+                <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
+            </ul>
+        </div>
+        
      
     </section>
 </main>
