@@ -93,6 +93,38 @@
 .menu a:hover {
     background-color: #ccc;
 }
+.menu .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu .dropdown-content a:hover {
+    background-color: #ccc;
+}
+
+.menu .dropbtn {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
 
     </style>
 </head>
@@ -147,46 +179,39 @@
     <!-- Navigation menu added to the left side -->
     <nav class="menu">
         <ul>
-            <li><a href="#">Menu Item 1</a></li>
-            <li><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
-            <li><a href="#">Menu Item 4</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">React</a>
+                <div class="dropdown-content">
+                    <a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a>
+                    <a href="react-learning-docs/react-resources.md">React Resources</a>
+                    <a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SQL</a>
+                <div class="dropdown-content">
+                    <a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a>
+                    <a href="sql-learning-docs/sql-resources.md">SQL Resources</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">PostgreSQL</a>
+                <div class="dropdown-content">
+                    <a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a>
+                    <a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Supabase</a>
+                <div class="dropdown-content">
+                    <a href="supabase-learning-docs/supabase.md">How to install Supabase</a>
+                    <a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
-    <section id="content">
-        <!-- Content section remains the same -->
-        <h2>React</h2>
-        <ul>
-            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
-            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
-        </ul>
-
-        <h2>SQL</h2>
-        <ul>
-            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
-            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
-        </ul>
-
-        <h2>Netlify</h2>
-        <ul>
-            <li><a href="netlify-docs/netlify.md">How to create Netlify application</a></li>
-            <li><a href="netlify-docs/netlify-resources.md">Netlify Resources</a></li>
-        </ul>
-
-        <h2>PostgreSQL Installation</h2>
-        <ul>
-            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
-            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
-        </ul>
-
-        <h2>Supabase Installation</h2>
-        <ul>
-            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
-            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
-        </ul>
-    </section>
+   
 </main>
 
 
