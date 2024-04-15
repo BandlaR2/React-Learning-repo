@@ -12,12 +12,16 @@
             justify-content: center; /* Center content horizontally */
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-        }
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Fixed positioning to keep it at the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    z-index: 9999; /* Ensure it's on top of other elements */
+}
         header h1 {
             margin-bottom: 20px; 
         }
@@ -42,12 +46,14 @@
             width: 100%;
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-        }
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Set to relative positioning */
+    margin-top: auto; /* Push footer to the bottom */
+}
         .container {
             max-width: 800px;
             margin: 0 auto;
