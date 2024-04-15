@@ -68,65 +68,56 @@
             text-decoration: underline;
         }
         .menu {
-    position: fixed;
-    transform: translateY(-50%); /* Adjust to center the menu vertically */
-    left: 0;
-    width: 200px; /* Adjust width as needed */
-    top:50%; /* Adjust as needed */
-    background-color: #f0f0f0;
-}
+            position: fixed;
+            transform: translateY(-50%);
+            left: 0;
+            width: 200px;
+            top: 50%;
+            background-color: #f0f0f0;
+        }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
-}
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.menu li {
-    padding: 10px;
-}
+        .menu li {
+            position: relative;
+        }
 
-.menu a {
-    text-decoration: none;
-    color: #333;
-}
+        .menu .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-.menu a:hover {
-    background-color: #ccc;
-}
-.menu .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 5px; /* Add some spacing between the link and dropdown */
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-}
+        .menu .dropdown-content.show {
+            display: block;
+        }
 
-.menu .dropdown:hover .dropdown-content {
-    display: block;
-}
+        .menu .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
 
-.menu .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+        .menu .dropdown-content a:hover {
+            background-color: #ccc;
+        }
 
-.menu .dropdown-content a:hover {
-    background-color: #ccc;
-}
-
-.menu .dropbtn {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-}
-
+        .menu .dropbtn {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+        }
     </style>
 </head>
 <body>
@@ -143,39 +134,6 @@
     </nav>
 </header>
 
-<main class="container">
-    <section id="content">
-        <h2>React</h2>
-        <ul>
-            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
-            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
-            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
-        </ul>
-
-        <h2>SQL</h2>
-        <ul>
-            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
-            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
-        </ul>
-
-        <h2>Netlify</h2>
-        <ul>
-            <li><a href="netlify-docs/netlify.md">How to create Netlify application</a></li>
-            <li><a href="netlify-docs/netlify-resources.md">Netlify Resources</a></li>
-        </ul>
-
-        <h2>PostgreSQL Installation</h2>
-        <ul>
-            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
-            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
-        </ul>
-
-        <h2>Supabase Installation</h2>
-        <ul>
-            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
-            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
-        </ul>
-</main>
 <main class="container">
     <!-- Navigation menu added to the left side -->
     <nav class="menu">
@@ -211,38 +169,25 @@
             </li>
         </ul>
     </nav>
-
-   
 </main>
-
 
 <footer>
     <p>&copy; 2024 Learning Resource Website</p>
 </footer>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const url = this.getAttribute('href');
-                fetch(url)
-                    .then(response => response.text())
-                    .then(markdown => {
-                        // Convert Markdown to HTML
-                        const converter = new showdown.Converter();
-                        const html = converter.makeHtml(markdown);
-                        document.getElementById('content').innerHTML = html;
-                    })
-                    .catch(error => console.error('Error fetching content:', error));
+        const dropdownBtns = document.querySelectorAll('.dropbtn');
+
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('show');
             });
         });
     });
 </script>
-<!-- Include the Showdown library for Markdown-to-HTML conversion -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
 </body>
 </html>
-
 
