@@ -193,10 +193,19 @@
 
                 // Toggle the clicked dropdown
                 dropdownContent.classList.toggle('show');
+
+                // Show only the selected option
+                dropdownContent.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        btn.textContent = e.target.textContent;
+                        dropdownContent.classList.remove('show');
+                    }
+                });
             });
         });
     });
 </script>
+
 
 
 </body>
