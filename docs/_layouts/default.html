@@ -239,7 +239,6 @@
         });
     });
 </script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const dropdownBtns = document.querySelectorAll('.dropbtn');
@@ -247,21 +246,15 @@
         dropdownBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
-
-                // Close all dropdowns
-                const allDropdowns = document.querySelectorAll('.dropdown-content');
-                allDropdowns.forEach(dropdown => {
-                    if (dropdown !== dropdownContent) {
-                        dropdown.classList.remove('show');
-                    }
-                });
-
-                // Toggle the clicked dropdown
+                const rect = this.getBoundingClientRect();
+                dropdownContent.style.top = rect.top + 'px';
+                dropdownContent.style.left = rect.right + 'px';
                 dropdownContent.classList.toggle('show');
             });
         });
     });
 </script>
+
 
 
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
