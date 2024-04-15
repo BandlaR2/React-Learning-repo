@@ -257,8 +257,19 @@
                 });
             }
         });
+
+        // Prevent default behavior of anchor tags inside dropdown content
+        const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add your desired behavior here, like fetching content or performing other actions
+                console.log("Dropdown option clicked:", this.getAttribute('href'));
+            });
+        });
     });
 </script>
+
 
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
