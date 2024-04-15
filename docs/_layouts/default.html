@@ -93,8 +93,8 @@
         .menu .dropdown-content {
             display: none;
             position: absolute;
-            top: 0;
-            left: calc(100% + 10px); /* Adjust the position to appear beside the dropdown button */
+            top: 100%;
+            left: 0;
             background-color: #f9f9f9;
             min-width: 160px;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -189,13 +189,20 @@
         dropdownBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
-                dropdownContent.classList.add('show');
-                
-                // Hide the dropdown content after 3 seconds (adjust as needed)
-                setTimeout(function() {
-                    dropdownContent.classList.remove('show');
-                }, 3000);
+                dropdownContent.classList.toggle('show');
             });
+        });
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
         });
     });
 </script>
