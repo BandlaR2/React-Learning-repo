@@ -247,13 +247,26 @@
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
                 const rect = this.getBoundingClientRect();
-                dropdownContent.style.top = rect.top + 'px';
-                dropdownContent.style.left = rect.right + 'px';
+                dropdownContent.style.top = rect.bottom + 'px'; // Adjusting the top position to appear below the button
+                dropdownContent.style.left = rect.left + 'px'; // Adjusting the left position to align with the button
                 dropdownContent.classList.toggle('show');
             });
         });
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
     });
 </script>
+
 
 
 
