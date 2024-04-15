@@ -239,7 +239,6 @@
         });
     });
 </script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const dropdownBtns = document.querySelectorAll('.dropbtn');
@@ -247,11 +246,15 @@
         dropdownBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
+                const rect = this.getBoundingClientRect();
+                dropdownContent.style.top = rect.top + 'px';
+                dropdownContent.style.left = rect.right + 'px';
                 dropdownContent.classList.toggle('show');
             });
         });
     });
 </script>
+
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
