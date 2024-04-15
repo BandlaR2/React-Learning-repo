@@ -238,6 +238,16 @@
             });
         });
     });
+     // Close the dropdown menu if the user clicks outside of it
+     window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            }
+        });
+
 </script>
 <!-- Include the Showdown library for Markdown-to-HTML conversion -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
