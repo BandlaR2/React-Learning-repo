@@ -70,10 +70,10 @@
         }
         .menu {
             position: fixed;
-            transform: translateY(-50%); /* Adjust to center the menu vertically */
+            transform: translateY(-50%);
             left: 0;
-            width: 200px; /* Adjust width as needed */
-            top: 50%; /* Adjust as needed */
+            width: 200px;
+            top: 50%;
             background-color: #f0f0f0;
         }
         .menu ul {
@@ -93,8 +93,8 @@
         .menu .dropdown-content {
             display: none;
             position: absolute;
-            top: 100%; /* Adjust to appear below the dropdown button */
-            left: 0;
+            top: 0;
+            left: calc(100% + 10px); /* Adjust the position to appear beside the dropdown button */
             background-color: #f9f9f9;
             min-width: 160px;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -117,7 +117,7 @@
             padding: 10px;
             text-decoration: none;
             color: #333;
-            position: relative; /* Added to position the dropdown content */
+            position: relative;
         }
         .dropdown-symbol {
             position: absolute;
