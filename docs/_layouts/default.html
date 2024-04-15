@@ -189,26 +189,20 @@
         dropdownBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
-                dropdownContent.classList.toggle('show');
+                dropdownContent.classList.add('show');
+                
+                // Hide the dropdown content after 3 seconds (adjust as needed)
+                setTimeout(function() {
+                    dropdownContent.classList.remove('show');
+                }, 3000);
             });
-        });
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.querySelectorAll('.dropdown-content');
-                dropdowns.forEach(dropdown => {
-                    if (dropdown.classList.contains('show')) {
-                        dropdown.classList.remove('show');
-                    }
-                });
-            }
         });
     });
 </script>
 
 </body>
 </html>
+
 
 
 
