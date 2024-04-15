@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
+    <title>Learning Resource Website</title>
     <style>
-        /* Your existing CSS styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -70,60 +69,50 @@
         }
         .menu {
             position: fixed;
-            transform: translateY(-50%);
+            transform: translateY(-50%); /* Adjust to center the menu vertically */
             left: 0;
-            width: 200px;
-            top: 50%;
+            width: 200px; /* Adjust width as needed */
+            top:50%; /* Adjust as needed */
             background-color: #f0f0f0;
         }
+
         .menu ul {
             list-style: none;
             padding: 0;
         }
+
         .menu li {
             padding: 10px;
         }
+
         .menu a {
             text-decoration: none;
             color: #333;
         }
+
         .menu a:hover {
             background-color: #ccc;
         }
-        .menu .dropdown-content {
+
+        .dropdown-content {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
         }
-        .menu .dropdown:hover .dropdown-content {
-            display: block;
+
+        .toggle-btn {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 5px;
         }
-        .menu .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .menu .dropdown-content a:hover {
+
+        .toggle-btn:hover {
             background-color: #ccc;
         }
-        .menu .dropbtn {
+
+        .toggle-btn.active + .dropdown-content {
             display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #333;
-            position: relative;
-        }
-        .dropdown-symbol {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -142,40 +131,38 @@
 </header>
 
 <main class="container">
-    <!-- Navigation menu added to the left side -->
-    <nav class="menu">
+    <section id="content">
+        <h2>React</h2>
         <ul>
-            <li class="dropdown">
-                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">React<span class="dropdown-symbol">&#9662;</span></a>
-                <div class="dropdown-content">
-                    <a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a>
-                    <a href="react-learning-docs/react-resources.md">React Resources</a>
-                    <a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">SQL<span class="dropdown-symbol">&#9662;</span></a>
-                <div class="dropdown-content">
-                    <a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a>
-                    <a href="sql-learning-docs/sql-resources.md">SQL Resources</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">PostgreSQL<span class="dropdown-symbol">&#9662;</span></a>
-                <div class="dropdown-content">
-                    <a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a>
-                    <a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">Supabase<span class="dropdown-symbol">&#9662;</span></a>
-                <div class="dropdown-content">
-                    <a href="supabase-learning-docs/supabase.md">How to install Supabase</a>
-                    <a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a>
-                </div>
-            </li>
+            <li><a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a></li>
+            <li><a href="react-learning-docs/react-resources.md">React Resources</a></li>
+            <li><a href="https://github.com/BandlaR2/React-Learning-repo">React-Learning-repo</a></li>
         </ul>
-    </nav>
+
+        <h2>SQL</h2>
+        <ul>
+            <li><a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a></li>
+            <li><a href="sql-learning-docs/sql-resources.md">SQL Resources</a></li>
+        </ul>
+
+        <h2>Netlify</h2>
+        <ul>
+            <li><a href="netlify-docs/netlify.md">How to create Netlify application</a></li>
+            <li><a href="netlify-docs/netlify-resources.md">Netlify Resources</a></li>
+        </ul>
+
+        <h2>PostgreSQL Installation</h2>
+        <ul>
+            <li><a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a></li>
+            <li><a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a></li>
+        </ul>
+
+        <h2>Supabase Installation</h2>
+        <ul>
+            <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
+            <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
+        </ul>
+    </section>
 </main>
 
 <footer>
@@ -183,21 +170,13 @@
 </footer>
 
 <script>
-    function toggleDropdown(btn) {
-        const dropdownContent = btn.nextElementSibling;
-        dropdownContent.classList.toggle('show');
-    }
-
-    // Close the dropdown menu if the user clicks outside of it
-    window.addEventListener('click', function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            const dropdowns = document.querySelectorAll('.dropdown-content');
-            dropdowns.forEach(dropdown => {
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
             });
-        }
+        });
     });
 </script>
 
