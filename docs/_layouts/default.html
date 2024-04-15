@@ -8,20 +8,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex; /* Add flex display for positioning */
-            justify-content: center; /* Center content horizontally */
         }
         header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    position: fixed; /* Fixed positioning to keep it at the top */
-    top: 0; /* Position at the top */
-    left: 0; /* Align to the left */
-    z-index: 9999; /* Ensure it's on top of other elements */
-}
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
         header h1 {
             margin-bottom: 20px; 
         }
@@ -40,20 +33,16 @@
         }
         main {
             padding: 20px;
-            display: flex; /* Add flex display for positioning */
-            justify-content: space-between; /* Space items evenly horizontally */
-            align-items: flex-start; /* Align content to the top */
-            width: 100%;
         }
         footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    position: relative; /* Set to relative positioning */
-    margin-top: auto; /* Push footer to the bottom */
-}
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -77,38 +66,6 @@
         }
         a:hover {
             text-decoration: underline;
-        }
-
-        /* Dropdown container style */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 150px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 0; /* Adjust to align with the left side */
-            top: 100%; /* Position below the dropdown button */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
         }
     </style>
 </head>
@@ -158,22 +115,36 @@
             <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
             <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
         </ul>
-    </section>
 
-    <!-- Dropdown menu added to the body section -->
-    <div class="dropdown">
-        <button class="dropdown-btn">Dropdown ▼</button>
-        <div class="dropdown-content">
-            <a href="#">Dropdown Item 1</a>
-            <a href="#">Dropdown Item 2</a>
-            <a href="#">Dropdown Item 3</a>
-        </div>
-    </div>
+     
+    </section>
 </main>
 
 <footer>
     <p>&copy; 2024 Learning Resource Website</p>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                fetch(url)
+                    .then(response => response.text())
+                    .then(markdown => {
+                        // Convert Markdown to HTML
+                        const converter = new showdown.Converter();
+                        const html = converter.makeHtml(markdown);
+                        document.getElementById('content').innerHTML = html;
+                    })
+                    .catch(error => console.error('Error fetching content:', error));
+            });
+        });
+    });
+</script>
+<!-- Include the Showdown library for Markdown-to-HTML conversion -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
 </body>
 </html>
