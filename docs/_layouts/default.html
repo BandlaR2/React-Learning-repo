@@ -146,7 +146,7 @@
     <nav class="menu">
         <ul>
             <li class="dropdown">
-                <a href="#" class="dropbtn">React<span class="dropdown-symbol">&#9662;</span></a>
+                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">React<span class="dropdown-symbol">&#9662;</span></a>
                 <div class="dropdown-content">
                     <a href="react-learning-docs/what-i-know-in-react.md">What I know in React</a>
                     <a href="react-learning-docs/react-resources.md">React Resources</a>
@@ -154,21 +154,21 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">SQL<span class="dropdown-symbol">&#9662;</span></a>
+                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">SQL<span class="dropdown-symbol">&#9662;</span></a>
                 <div class="dropdown-content">
                     <a href="sql-learning-docs/what-i-know-in-sql.md">What I know in SQL</a>
                     <a href="sql-learning-docs/sql-resources.md">SQL Resources</a>
                 </div>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">PostgreSQL<span class="dropdown-symbol">&#9662;</span></a>
+                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">PostgreSQL<span class="dropdown-symbol">&#9662;</span></a>
                 <div class="dropdown-content">
                     <a href="postgres-installation-docs/pagila.md">How to install PostgreSQL</a>
                     <a href="postgres-installation-docs/Postgres-resources.md">PostgreSQL Installation Resources</a>
                 </div>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">Supabase<span class="dropdown-symbol">&#9662;</span></a>
+                <a href="#" class="dropbtn" onclick="toggleDropdown(this)">Supabase<span class="dropdown-symbol">&#9662;</span></a>
                 <div class="dropdown-content">
                     <a href="supabase-learning-docs/supabase.md">How to install Supabase</a>
                     <a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a>
@@ -183,27 +183,21 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdownBtns = document.querySelectorAll('.dropbtn');
+    function toggleDropdown(btn) {
+        const dropdownContent = btn.nextElementSibling;
+        dropdownContent.classList.toggle('show');
+    }
 
-        dropdownBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const dropdownContent = this.nextElementSibling;
-                dropdownContent.classList.toggle('show');
+    // Close the dropdown menu if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
             });
-        });
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.querySelectorAll('.dropdown-content');
-                dropdowns.forEach(dropdown => {
-                    if (dropdown.classList.contains('show')) {
-                        dropdown.classList.remove('show');
-                    }
-                });
-            }
-        });
+        }
     });
 </script>
 
