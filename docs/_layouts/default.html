@@ -182,11 +182,22 @@
         dropdownBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const dropdownContent = this.nextElementSibling;
+
+                // Close all dropdowns
+                const allDropdowns = document.querySelectorAll('.dropdown-content');
+                allDropdowns.forEach(dropdown => {
+                    if (dropdown !== dropdownContent) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+
+                // Toggle the clicked dropdown
                 dropdownContent.classList.toggle('show');
             });
         });
     });
 </script>
+
 
 </body>
 </html>
