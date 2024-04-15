@@ -67,6 +67,33 @@
         a:hover {
             text-decoration: underline;
         }
+        .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    height: 100%; /* Make it full height */
+    background-color: #f0f0f0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    background-color: #ccc;
+}
+
     </style>
 </head>
 <body>
@@ -115,7 +142,19 @@
             <li><a href="supabase-learning-docs/supabase.md">How to install Supabase</a></li>
             <li><a href="supabase-learning-docs/supabase-resources.md">Supabase Installation Resources</a></li>
         </ul>
+ <!-- Navigation menu added to the left side -->
+ <nav class="menu">
+    <ul>
+        <li><a href="#">Menu Item 1</a></li>
+        <li><a href="#">Menu Item 2</a></li>
+        <li><a href="#">Menu Item 3</a></li>
+        <li><a href="#">Menu Item 4</a></li>
+    </ul>
+</nav>
 
+<section id="content">
+    <!-- Content section remains the same -->
+</section>
      
     </section>
 </main>
