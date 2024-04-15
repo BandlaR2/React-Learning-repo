@@ -255,6 +255,7 @@
 
         dropdownOptions.forEach(option => {
             option.addEventListener('click', function() {
+                e.preventDefault(); // Prevent the default link behavior
                 const dropdown = this.closest('.dropdown');
                 const dropdownBtn = dropdown.querySelector('.dropbtn');
                 dropdownBtn.textContent = this.textContent;
