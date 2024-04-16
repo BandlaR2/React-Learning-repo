@@ -95,11 +95,14 @@
         }
 
         .menu .dropdown-content {
-    display: none; /* Hide submenu by default */
-     
+            display: none; /* Hide submenu by default */
+    position: absolute;
+    left: 100%; /* Position submenu to the right of the dropdown button */
+    top: 0;
     background-color: #f9f9f9;
-   
-  
+    min-width: 200px; /* Increase the minimum width of the submenu box */
+    padding: 15px; /* Add padding for spacing */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 
